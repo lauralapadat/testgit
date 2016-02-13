@@ -1,1 +1,3 @@
-This is my test repository from the git course. 
+I wanted to have a repository of my very own, and now I do.
+
+:) 

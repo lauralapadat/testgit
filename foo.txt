@@ -1,4 +1,0 @@
-This is an edit.
-This is foo.
-Dev edit.
-wahoo
