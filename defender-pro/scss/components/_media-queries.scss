@@ -1,0 +1,50 @@
+$break-small: 480px;
+$break-medium: 768px;
+$break-large: 1050px;
+
+@media screen and (max-width: $break-small) {
+
+    html {
+        font-size: 12px !important;
+    }
+
+    img {
+        //display: block !important;
+    }
+
+    #heading {
+        .intro-text {
+            font-size: 3em;
+        }
+
+        .intro-description {
+            font-size: 1.5em;
+        }
+    }
+
+    // Adjust Semantic UI Grid
+
+
+}
+
+@media screen and (max-width: $break-medium) {
+
+    #heading {
+        //text-align: center !important;
+        h1, h2 {
+            display: block !important;
+            //text-align: center !important;
+        }
+
+        ul {
+            display: inline-block !important;
+            text-align: left !important;
+        }
+    }
+
+}
+
+@media screen and (min-width: $break-large) {
+
+}
+

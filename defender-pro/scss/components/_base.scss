@@ -1,0 +1,251 @@
+body {
+    background-color: $footer-background-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+main {
+    background-color: $main-background-color;
+}
+
+
+// Sections
+body section {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: set-lineheight-multiples(3);
+    padding-bottom: set-lineheight-multiples(3);
+
+    @media screen and (max-width: $break-small) {
+        padding-top: set-lineheight-multiples(2);
+        padding-bottom: set-lineheight-multiples(2);
+    }
+}
+.woocommerce + section {
+    margin-top: set-lineheight-multiples(3);
+    margin-bottom: set-lineheight-multiples(3);
+}
+section[class^="woocommerce-"] + section {
+    margin-top: set-lineheight-multiples(-3);
+}
+
+
+// Grid
+@media only screen and (min-width: 1920px) {
+    .ui.page.grid {
+        padding-left: 21%;
+        padding-right: 21%;
+    }
+}
+
+
+// Text
+h1, h2, h3, h4, h5, span, p {
+    font-weight: 300;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+address {
+    font-style: normal;
+}
+
+q {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+q::before {
+    content: open-quote;
+}
+q::after {
+    content: close-quote;
+}
+
+
+// Headers
+.column {
+    > h1, > h2, > h3, > h4, > h5, > h6 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+
+// Icons
+i.icon {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ui.menu .item > i.dropdown.icon {
+    margin-left: 0.5em;
+}
+
+
+// Buttons
+.ui.button {
+    border-radius: 5px;
+    background-color: $defender-green;
+    color: white;
+    //box-shadow: 1px 1px 10px rgba(0,0,0,0.21);
+    background: linear-gradient(to bottom, rgba(93,194,74,1) 0%,rgba(76,181,62,1) 100%);
+    padding-top: 0.8rem;
+    padding-bottom: 1em;
+
+    &:focus {
+        color: white;
+    }
+
+    h1, h2, h3 ,h4, h5, span, p {
+        color: white;
+        margin: 0;
+        //font-size: 1.5em;
+        text-shadow: 2px 2px #65a55b;
+    }
+
+    &:hover {
+        color: white;
+        background-color: #37AB34;
+        background: linear-gradient(to bottom, rgba(93,194,74,1) 0%,#37AB34 100%);
+    }
+
+    &.dark {
+        background: linear-gradient(to bottom, rgba(62,83,110,1) 0%,rgba(50,68,88,1) 100%);
+
+        h1, h2, h3 ,h4, h5, span, p {
+            text-shadow: 1px 1px $black;
+        }
+
+        &:hover {
+            background-color: #2B3D54;
+            background: linear-gradient(to bottom, rgba(62,83,110,1) 0%,#2B3D54 100%);
+        }
+    }
+
+
+    &.grey {
+        color: black;
+        background: linear-gradient(to top, #c7cfd1, #d9dfe0);
+
+        h1, h2, h3 ,h4, h5, span, p {
+            color: rgb(82, 97, 118) !important;
+            text-shadow: 1px 1px rgba(255, 255, 255, 0.5) !important;
+        }
+    }
+
+    &.grey:hover {
+        color: black;
+        background: linear-gradient(to bottom, #DADFE0, #ACC1C2);
+    }
+
+    &.white {
+        background: linear-gradient(to bottom, rgb(234, 238, 241), rgb(226, 231, 235));
+
+        h1, h2, h3 ,h4, h5, span, p {
+            color: $black !important;
+            text-shadow: 1px 1px rgba(255, 255, 255, 0.5) !important;
+        }
+
+        &:hover {
+            background: linear-gradient(to bottom, rgb(234, 238, 241), #D6D7D8);
+        }
+    }
+
+    &.red {
+        background: linear-gradient(to bottom, rgb(233, 65, 65), rgb(188, 22, 22));
+
+        h1, h2, h3 ,h4, h5, span, p {
+            color: white !important;
+            text-shadow: 1px 1px rgba(255, 255, 255, 0.5) !important;
+        }
+
+        &:hover {
+            background: linear-gradient(to bottom, #E71010, #9F1514);
+        }
+    }
+
+
+}
+
+
+// Fix for z-index issue with floated content order
+.ui[class*="right floated"].button, .ui[class*="right floated"].buttons {
+    z-index: 1;
+    position: relative;
+}
+
+
+// Forms and inputs
+.ui.form {
+    input:not([type]):focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=date]:focus,
+    input[type=datetime-local]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=number]:focus {
+        border-radius: .2857rem;
+    }
+}
+
+
+// Lists
+.ui.list .list > .item, .ui.list > .item, ol.ui.list li, ul.ui.list li {
+    display: flex;
+    flex-wrap: wrap;
+}
+.ui.list .list > .item > img.image + .content, .ui.list > .item > img.image + .content {
+    flex: 1;
+    align-self: center;
+}
+.ui.list .list, ol.ui.list ol, ul.ui.list ul {
+    width: 100%;
+}
+.ui.list .list > .item > img.image + [class*="top aligned"].content, .ui.list > .item > img.image + [class*="top aligned"].content,
+.ui.list .list > .item [class*="top aligned"].content, .ui.list > .item > [class*="top aligned"].content {
+    align-self: flex-start;
+}
+
+
+// Tables
+.ui[class*="very basic"].definition.table tr td:first-child {
+    background: transparent;
+}
+.ui.basic.table tfoot th, .ui.basic.table tfoot td {
+    border-top: 1px solid #d4d4d5;
+}
+
+
+// Messages
+.ui.message {
+    .icon {
+        padding-left: 1px;
+    }
+    p {
+        font-size: 1em;
+    }
+}
+
+
+// Dimmer / Modal
+// Show the scrollbar to avoid the width jumping when toggling modals
+body.animating.in.dimmable, body.dimmed.dimmable {
+    overflow: inherit;
+}
+// Move outside close button inside the dialog
+.ui.modal>.close {
+    top: .725rem;
+    right: 1rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+
+// Dropdown
+.ui.search.dropdown {
+    min-width: 0;
+}
+
+.ui.selection.dropdown {
+    line-height: 1.2142em;
+    padding: .67861em 1em;
+}

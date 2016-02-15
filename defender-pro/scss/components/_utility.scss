@@ -1,0 +1,132 @@
+.hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+#compare {
+    text-align: center;
+    border: none;
+    overflow: hidden;
+    tbody {
+        border: none;
+    }
+
+    thead {
+        border-top: none;
+
+        img {
+            margin-top: 1rem;
+
+        }
+
+        h5 {
+            // To solve text-collapse breaking image alignment
+            height: rem-calc(50);
+            margin-bottom: 1rem;
+            @media screen and (max-width: $break-medium) {
+                font-size: 1.2rem !important;
+            }
+        }
+
+    }
+
+    th {
+        text-align: center;
+        background: white;
+        width: 25%;
+        border: none;
+
+        h2 {
+            color: $black;
+            font-size: 2.5em;
+        }
+
+    }
+
+    th:nth-of-type(3) {
+        background: #F0F0F0;
+    }
+
+    h5 {
+        text-align: center;
+        font-weight: 300;
+        margin-top: 1rem;
+        margin-bottom: 0;
+        color: black;
+        
+        @media screen and (max-width: $break-medium) {
+            font-size: 1.2rem !important;
+        }
+        @media screen and (max-width: $break-small) {
+            font-size: 1rem !important;
+        }
+    }
+
+    td:first-of-type {
+        border-left: 1px solid #d4d4d5;
+    }
+
+    td {
+        text-align: center;
+        height: 5rem;
+        border-top: 1px solid #d4d4d5;
+        width: 25%;
+
+        span {
+            font-size: 1.4em;
+        }
+
+        i {
+            color: rgb(208, 215, 216);
+            font-size: 1em;
+        }
+
+        .checkmark {
+            color: $defender-green;
+            font-size: 2.3em;
+        }
+    }
+
+    td:nth-of-type(3) {
+        background: #F0F0F0;
+    }
+
+    td:last-of-type {
+        border-right: 1px solid #d4d4d5;
+    }
+
+    tr:last-of-type {
+        border: none;
+
+        td {
+            border: none;
+            border-top: 1px solid #d4d4d5;
+        }
+    }
+
+    .button {
+        margin-top: 1rem;
+        display: block;
+
+        h2 {
+            font-weight: 700;
+            
+            @media screen and (max-width: $break-small) {
+                font-size: 1rem !important;
+                text-shadow: none;
+            }
+        }
+    }
+
+    a {
+        display: block;
+        margin-top: 1rem;
+    }
+
+}
+
+

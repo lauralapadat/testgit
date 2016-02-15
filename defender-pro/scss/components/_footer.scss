@@ -1,0 +1,118 @@
+#footer {
+
+    span {
+        font-size: 1rem;
+    }
+
+    address span {
+        font-size: 0.75rem;
+    }
+
+
+    padding-top: set-lineheight-multiples(3);
+    //color: set-text-color($footer-background-color);
+    color: white;
+    background-color: $footer-background-color;
+    padding-bottom: 3rem;
+
+    .ui.header {
+        font-size: rem-calc(20px);
+        text-transform: uppercase;
+        color: inherit;
+    }
+    .ui.link.list {
+        font-size: inherit;
+
+        li::before {
+            display: none;
+        }
+        .item, .item a, li::before {
+            font-size: inherit;
+            //color: set-text-color($footer-background-color) !important;
+            color: white;
+        }
+    }
+
+    aside {
+
+        h1 {
+            text-align: left;
+        }
+
+        @media screen and (max-width: $break-medium) {
+            width: 30% !important;
+            margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: $break-medium) {
+            width: 50% !important;
+            margin-bottom: 1.5rem;
+        }
+
+    }
+
+
+    li {
+        font-size: 1.1em;
+        padding-bottom: 0.1rem;
+    }
+    a {
+        //color: set-text-color($footer-background-color);
+        color: white;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+#secondary-nav {
+    padding-bottom: rem-calc(12px);
+    margin-bottom: 0;
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: -webkit-calc(100% - 2rem);
+        width: calc(100% - 2rem);
+        height: 1px;
+        margin: 0 1rem;
+        box-shadow: 0 -1px 0 0 set-border-color($footer-background-color);
+    }
+    .ui.link.list {
+        margin: 0;
+
+        &.right {
+            float: right;
+        }
+    }
+}
+
+#copyright {
+    margin-top: -1rem;
+}
+
+#social-links {
+    margin-top: -1rem;
+    text-align: right;
+
+    .ui.link.list {
+
+        .item {
+            display: inline-block;
+            font-size: $footer-icon-size;
+            width: $footer-icon-size;
+            height: $footer-icon-size;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 3px;
+            padding: 0;
+
+            .icon {
+                color: set-text-color($footer-background-color);
+            }
+        }
+    }
+}

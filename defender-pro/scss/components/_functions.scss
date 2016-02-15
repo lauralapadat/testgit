@@ -1,0 +1,67 @@
+
+// Determine height by multiples of line-height
+@function set-lineheight-multiples($lines) {
+    @return #{$line-height * $lines}rem;
+}
+
+// Determine text color from background color
+@function set-text-color($background-color) {
+    @if ( lightness($background-color) > 50 ) {
+        @return darken($background-color, 60%);
+    }
+    @else {
+        @return lighten($background-color, 60%);
+    }
+}
+
+// Determine border color from background color
+@function set-border-color($background-color) {
+    @if ( lightness($background-color) > 50 ) {
+        @return #{rgba(0, 0, 0, 0.15)};
+    }
+    @else {
+        @return #{rgba(255, 255, 255, 0.15)};
+    }
+}
+
+// Strip unit
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+// Convert to rem
+@function convert-to-rem($value, $base-value: $rem-base) {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+    @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+    @return $value;
+}
+
+// Calculate rem from px
+//
+// New Syntax, allows to optionally calculate on a different base value to counter compounding effect of rem's.
+// Call with 1, 2, 3 or 4 parameters, 'px' is not required but supported:
+//
+//   rem-calc(10 20 30px 40);
+//
+// Space delimited, if you want to delimit using comma's, wrap it in another pair of brackets
+//
+//   rem-calc((10, 20, 30, 40px));
+//
+// Optionally call with a different base (eg: 8px) to calculate rem.
+//
+//   rem-calc(16px 32px 48px, 8px);
+//
+// If you require to comma separate your list
+//
+//   rem-calc((16px, 32px, 48), 8px);
+@function rem-calc($values, $base-value: $rem-base) {
+    $max: length($values);
+
+    @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+    $remValues: ();
+    @for $i from 1 through $max {
+        $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+    }
+    @return $remValues;
+}

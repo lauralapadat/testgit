@@ -1,0 +1,72 @@
+// Base
+$rem-base: 14px;
+$line-height: 1.33;
+$main-background-color: #DEE2D3;
+$defender-green: #50C04D;
+$macmedic-green: #8DEBAE;
+$dark-grey: #2D3036;
+$black : rgb(44, 63, 77);
+
+// Text
+$pretty-blockquote-text-size: rem-calc(16);
+$pretty-blockquote-quote-size: rem-calc(22);
+
+
+// Header!
+$header-background-color: #fff;
+$header-text-color: rgba(255, 255, 255, 0.9);
+$header-border-color: rgba(0, 0, 0, 0.1);
+$header-shadow-color: rgba(0, 0, 0, 0.04);
+$header-height: rem-calc(89);
+$text-font-size: rem-calc(16);
+
+$dropdown-border-color: $header-border-color;
+$dropdown-shadow-color: $header-shadow-color;
+
+
+// Footer
+$footer-background-color: #2c3f4d;
+$footer-icon-size: rem-calc(20);
+
+
+// Heading slides
+$slide-height: rem-calc(500);
+$slide-background-color: $footer-background-color;
+$slide-text-color: $header-text-color;
+
+// Break-points
+$break-small: 480px;
+$break-medium: 768px;
+$break-large: 1200px;
+
+
+/*
+* Perhaps unsemantic font size definitions. Chosen over classes for brevity.
+* Rarely override font-sizes, use the correct tag instead.
+* h4 and h3 are often treated as if they are p1 and p2.
+* Jan don't hate me lol
+*/
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.7rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
